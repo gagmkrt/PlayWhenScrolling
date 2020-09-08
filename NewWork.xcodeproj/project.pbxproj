@@ -7,17 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CC3F0F5825051FD800E71D75 /* CacheManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC3F0F5725051FD800E71D75 /* CacheManager.swift */; };
+		CC3F0F5B2506497700E71D75 /* MyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC71D78B250137F900EBA839 /* MyTableViewCell.swift */; };
 		CC71D7782501376E00EBA839 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC71D7772501376E00EBA839 /* AppDelegate.swift */; };
 		CC71D77A2501376E00EBA839 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC71D7792501376E00EBA839 /* SceneDelegate.swift */; };
 		CC71D77C2501376E00EBA839 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC71D77B2501376E00EBA839 /* ViewController.swift */; };
 		CC71D77F2501376E00EBA839 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CC71D77D2501376E00EBA839 /* Main.storyboard */; };
 		CC71D7812501377100EBA839 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CC71D7802501377100EBA839 /* Assets.xcassets */; };
 		CC71D7842501377100EBA839 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CC71D7822501377100EBA839 /* LaunchScreen.storyboard */; };
-		CC71D78C250137F900EBA839 /* MyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC71D78B250137F900EBA839 /* MyTableViewCell.swift */; };
 		CC974D232502620000A57617 /* Video.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = CC974D22250261FF00A57617 /* Video.mp4 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CC3F0F5725051FD800E71D75 /* CacheManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheManager.swift; sourceTree = "<group>"; };
 		CC71D7742501376E00EBA839 /* NewWork.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NewWork.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CC71D7772501376E00EBA839 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CC71D7792501376E00EBA839 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -69,6 +71,7 @@
 				CC71D7802501377100EBA839 /* Assets.xcassets */,
 				CC71D7822501377100EBA839 /* LaunchScreen.storyboard */,
 				CC71D7852501377100EBA839 /* Info.plist */,
+				CC3F0F5725051FD800E71D75 /* CacheManager.swift */,
 			);
 			path = NewWork;
 			sourceTree = "<group>";
@@ -146,8 +149,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				CC71D77C2501376E00EBA839 /* ViewController.swift in Sources */,
-				CC71D78C250137F900EBA839 /* MyTableViewCell.swift in Sources */,
+				CC3F0F5825051FD800E71D75 /* CacheManager.swift in Sources */,
 				CC71D7782501376E00EBA839 /* AppDelegate.swift in Sources */,
+				CC3F0F5B2506497700E71D75 /* MyTableViewCell.swift in Sources */,
 				CC71D77A2501376E00EBA839 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -293,6 +297,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 65DDDL4Z79;
 				INFOPLIST_FILE = NewWork/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -310,6 +315,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 65DDDL4Z79;
 				INFOPLIST_FILE = NewWork/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

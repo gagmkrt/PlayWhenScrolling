@@ -12,6 +12,38 @@ import AVKit
 
 class MyTableViewCell: UITableViewCell {
     
+    var player = AVPlayer()
+    
+    var playerItem: AVPlayerItem?
+    
+    @IBOutlet weak var playButton: UIButton!
+    
+    @IBOutlet weak var slider: UISlider!
+    
+    
+    
+    var isPlaying = false {
+        
+        willSet {
+            if newValue {
+                
+                playButton.setImage(UIImage(named: "pause"), for: .normal)
+                videoLayer.player?.play()
+                
+                DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                    self.playButton.isHidden = true
+                    self.slider.isHidden = true
+                }
+            } else {
+                playButton.setImage(UIImage(named: "play"), for: .normal)
+                videoLayer.player?.pause()
+            }
+        }
+    }
+    
+    
+    
+    
     var videoLayer = AVPlayerLayer()
     
     @IBOutlet weak var myView: UIView!
@@ -23,17 +55,47 @@ class MyTableViewCell: UITableViewCell {
         super.awakeFromNib()
         
         
-        
-        
     }
+    
+    @IBAction func playAndPause(_ sender: UIButton) {
+        
+        isPlaying = !isPlaying
+        slider.maximumValue = Float(player.currentItem?.asset.duration.seconds ?? 0)
+
+    }
+    
+    
+    
+    func tapingOnScreen() {
+        let tap = UITapGestureRecognizer(target: self, action: #selector(taping))
+        myView.addGestureRecognizer(tap)
+    }
+    
+    @objc func taping() {
+        
+        playButton.isHidden = false
+        slider.isHidden = false
+    }
+    
+    
+    
     
     func createPlayer() {
         
-        let player = AVPlayer(url: videoUrl!)
+        playerItem = AVPlayerItem(url: videoUrl!)
+        player = AVPlayer(playerItem: playerItem)
         videoLayer.player = player
         videoLayer.frame = myView.bounds
+        videoLayer.videoGravity = .resizeAspectFill
         myView.layer.addSublayer(videoLayer)
+        
+        player.addPeriodicTimeObserver(forInterval: CMTime(seconds: 0.5, preferredTimescale: 1000), queue: DispatchQueue.main) { (time) in
+
+            self.slider.value = Float(time.seconds)
+        }
+        
     }
+    
     
     
     
