@@ -94,13 +94,21 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
                             cell.videoLayer.player?.play()
                             cell.playButton.setImage(UIImage(named: "pause"), for: .normal)
                             cell.slider.maximumValue = Float(cell.player.currentItem?.asset.duration.seconds ?? 0)
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+                                cell.slider.isHidden = true
+                                cell.playButton.isHidden = true
+                            }
                             
                             focusCell = cell
                         } else {
                             cell.videoLayer.player?.pause()
+                            cell.playButton.setImage(UIImage(named: "play"), for: .normal)
+                            cell.playButton.isHidden = false
+
                         }
                     } else {
                         cell.videoLayer.player?.pause()
+
                     }
                 }
             }

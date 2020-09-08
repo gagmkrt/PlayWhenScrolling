@@ -27,16 +27,16 @@ class MyTableViewCell: UITableViewCell {
         willSet {
             if newValue {
                 
-                playButton.setImage(UIImage(named: "pause"), for: .normal)
-                videoLayer.player?.play()
+                playButton.setImage(UIImage(named: "play"), for: .normal)
+                videoLayer.player?.pause()
                 
-                DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
                     self.playButton.isHidden = true
                     self.slider.isHidden = true
                 }
             } else {
-                playButton.setImage(UIImage(named: "play"), for: .normal)
-                videoLayer.player?.pause()
+                playButton.setImage(UIImage(named: "pause"), for: .normal)
+                videoLayer.player?.play()
             }
         }
     }
